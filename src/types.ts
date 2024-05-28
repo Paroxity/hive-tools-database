@@ -14,13 +14,13 @@ export type PlayerAvatar = z.infer<typeof PlayerAvatar>;
  * Cosmetic Types
  */
 
-export const CosmeticImageLocalizedString = z
+export const CosmeticLocalizedString = z
   .object({
     neutral: z.string(),
   })
   .catchall(z.string());
 export type CosmeticImageLocalizedString = z.infer<
-  typeof CosmeticImageLocalizedString
+  typeof CosmeticLocalizedString
 >;
 
 export const CosmeticImage = z.object({

@@ -8,7 +8,7 @@ import {
 } from "drizzle-orm/pg-core";
 import {
   CosmeticImage,
-  CosmeticImageLocalizedString,
+  CosmeticLocalizedString,
   CosmeticRating,
   PlayerAvatar,
 } from "./types.ts";
@@ -60,8 +60,8 @@ export const cosmetics = pgTable("cosmetics", {
 
 export const CosmeticSchema = z.object({
   id: z.string(),
-  title: CosmeticImageLocalizedString,
-  description: CosmeticImageLocalizedString,
+  title: CosmeticLocalizedString,
+  description: CosmeticLocalizedString,
   creation_date: z.date(),
   last_modified: z.date(),
   start_date: z.date().nullable(),
