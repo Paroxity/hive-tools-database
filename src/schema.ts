@@ -11,7 +11,7 @@ import {
   CosmeticLocalizedString,
   CosmeticRating,
   PlayerAvatar,
-} from "./types.ts";
+} from "./types";
 import { sql } from "drizzle-orm";
 import { z } from "zod";
 

@@ -1,6 +1,6 @@
 import postgres from "postgres";
 import { drizzle } from "drizzle-orm/postgres-js";
-import { cosmetics, players } from "./schema.ts";
+import { cosmetics, players } from "./schema";
 
 /**
  * @param connectionString See {@link https://www.postgresql.org/docs/current/libpq-connect.html#LIBPQ-CONNSTRING-URIS Postgres Connection URIs}
@@ -16,5 +16,5 @@ export default function initializeDatabase({
   return { client, db };
 }
 
-export * from "./types.ts";
-export { CosmeticSchema, PlayerSchema } from "./schema.ts";
+export * from "./types";
+export { CosmeticSchema, PlayerSchema } from "./schema";
