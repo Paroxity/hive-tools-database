@@ -1,9 +1,13 @@
 {
   "name": "hive-tools-database",
   "version": "1.0.0",
-  "main": "src/index.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "type": "module",
   "author": "paroxity",
+  "scripts": {
+    "build": "tsc"
+  },
   "dependencies": {
     "drizzle-kit": "^0.21.4",
     "drizzle-orm": "^0.30.10",
