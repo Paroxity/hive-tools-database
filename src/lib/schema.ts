@@ -12,7 +12,9 @@ export const players = pgTable("players", {
   uuid: text("uuid").primaryKey().notNull(),
   username: text("username").notNull(),
   rank: text("rank").notNull(),
-  equipped_avatar_id: text("equipped_avatar_id").default("default").notNull(),
+  equipped_avatar_id: text("equipped_avatar_id")
+    .default("avatars/default.png")
+    .notNull(),
   equipped_avatar_name: text("equipped_avatar_name")
     .default("Default")
     .notNull(),
