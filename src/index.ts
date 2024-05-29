@@ -1,3 +1,5 @@
 export * from "./lib/database";
-export * from "./lib/types";
 export * from "./lib/schema";
+
+// This is not exported to enforce usage of single /types import.
+// export * from "./lib/types";
