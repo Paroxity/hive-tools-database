@@ -10,7 +10,6 @@ import {
   CosmeticImage,
   CosmeticLocalizedString,
   CosmeticRating,
-  PlayerAvatar,
 } from "./types";
 import { sql } from "drizzle-orm";
 import { z } from "zod";
@@ -20,17 +19,23 @@ import { z } from "zod";
  */
 
 export const players = pgTable("players", {
-  id: text("id").primaryKey().notNull(),
+  uuid: text("uuid").primaryKey().notNull(),
   username: text("username").notNull(),
   rank: text("rank").notNull(),
-  equipped_avatar: json("equipped_avatar"),
+  equipped_avatar_id: text("equipped_avatar_id").default("default"),
+  equipped_avatar_name: text("equipped_avatar_name").default("Default"),
+  created_at: timestamp("created_at").defaultNow(),
+  updated_at: timestamp("updated_at").defaultNow(),
 });
 
 export const PlayerSchema = z.object({
-  id: z.string(),
+  uuid: z.string(),
   username: z.string(),
   rank: z.string(),
-  equipped_avatar: PlayerAvatar,
+  equipped_avatar_id: z.string(),
+  equipped_avatar_name: z.string(),
+  created_at: z.date().optional(),
+  updated_at: z.date().optional(),
 });
 export type PlayerSchema = z.infer<typeof PlayerSchema>;
 

@@ -1,16 +1,6 @@
 import { z } from "zod";
 
 /**
- * Player Types
- */
-
-export const PlayerAvatar = z.object({
-  url: z.string(),
-  name: z.string(),
-});
-export type PlayerAvatar = z.infer<typeof PlayerAvatar>;
-
-/**
  * Cosmetic Types
  */
 

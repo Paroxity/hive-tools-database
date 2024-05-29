@@ -6,8 +6,8 @@ export declare const players: import("drizzle-orm/pg-core").PgTableWithColumns<{
     name: "players";
     schema: undefined;
     columns: {
-        id: import("drizzle-orm/pg-core").PgColumn<{
-            name: "id";
+        uuid: import("drizzle-orm/pg-core").PgColumn<{
+            name: "uuid";
             tableName: "players";
             dataType: "string";
             columnType: "PgText";
@@ -42,15 +42,51 @@ export declare const players: import("drizzle-orm/pg-core").PgTableWithColumns<{
             enumValues: [string, ...string[]];
             baseColumn: never;
         }, {}, {}>;
-        equipped_avatar: import("drizzle-orm/pg-core").PgColumn<{
-            name: "equipped_avatar";
+        equipped_avatar_id: import("drizzle-orm/pg-core").PgColumn<{
+            name: "equipped_avatar_id";
             tableName: "players";
-            dataType: "json";
-            columnType: "PgJson";
-            data: unknown;
-            driverParam: unknown;
+            dataType: "string";
+            columnType: "PgText";
+            data: string;
+            driverParam: string;
             notNull: false;
-            hasDefault: false;
+            hasDefault: true;
+            enumValues: [string, ...string[]];
+            baseColumn: never;
+        }, {}, {}>;
+        equipped_avatar_name: import("drizzle-orm/pg-core").PgColumn<{
+            name: "equipped_avatar_name";
+            tableName: "players";
+            dataType: "string";
+            columnType: "PgText";
+            data: string;
+            driverParam: string;
+            notNull: false;
+            hasDefault: true;
+            enumValues: [string, ...string[]];
+            baseColumn: never;
+        }, {}, {}>;
+        created_at: import("drizzle-orm/pg-core").PgColumn<{
+            name: "created_at";
+            tableName: "players";
+            dataType: "date";
+            columnType: "PgTimestamp";
+            data: Date;
+            driverParam: string;
+            notNull: false;
+            hasDefault: true;
+            enumValues: undefined;
+            baseColumn: never;
+        }, {}, {}>;
+        updated_at: import("drizzle-orm/pg-core").PgColumn<{
+            name: "updated_at";
+            tableName: "players";
+            dataType: "date";
+            columnType: "PgTimestamp";
+            data: Date;
+            driverParam: string;
+            notNull: false;
+            hasDefault: true;
             enumValues: undefined;
             baseColumn: never;
         }, {}, {}>;
@@ -58,35 +94,29 @@ export declare const players: import("drizzle-orm/pg-core").PgTableWithColumns<{
     dialect: "pg";
 }>;
 export declare const PlayerSchema: z.ZodObject<{
-    id: z.ZodString;
+    uuid: z.ZodString;
     username: z.ZodString;
     rank: z.ZodString;
-    equipped_avatar: z.ZodObject<{
-        url: z.ZodString;
-        name: z.ZodString;
-    }, "strip", z.ZodTypeAny, {
-        url: string;
-        name: string;
-    }, {
-        url: string;
-        name: string;
-    }>;
+    equipped_avatar_id: z.ZodString;
+    equipped_avatar_name: z.ZodString;
+    created_at: z.ZodOptional<z.ZodDate>;
+    updated_at: z.ZodOptional<z.ZodDate>;
 }, "strip", z.ZodTypeAny, {
-    id: string;
+    uuid: string;
     username: string;
     rank: string;
-    equipped_avatar: {
-        url: string;
-        name: string;
-    };
+    equipped_avatar_id: string;
+    equipped_avatar_name: string;
+    created_at?: Date | undefined;
+    updated_at?: Date | undefined;
 }, {
-    id: string;
+    uuid: string;
     username: string;
     rank: string;
-    equipped_avatar: {
-        url: string;
-        name: string;
-    };
+    equipped_avatar_id: string;
+    equipped_avatar_name: string;
+    created_at?: Date | undefined;
+    updated_at?: Date | undefined;
 }>;
 export type PlayerSchema = z.infer<typeof PlayerSchema>;
 /**

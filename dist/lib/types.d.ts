@@ -1,19 +1,5 @@
 import { z } from "zod";
 /**
- * Player Types
- */
-export declare const PlayerAvatar: z.ZodObject<{
-    url: z.ZodString;
-    name: z.ZodString;
-}, "strip", z.ZodTypeAny, {
-    url: string;
-    name: string;
-}, {
-    url: string;
-    name: string;
-}>;
-export type PlayerAvatar = z.infer<typeof PlayerAvatar>;
-/**
  * Cosmetic Types
  */
 export declare const CosmeticLocalizedString: z.ZodObject<{
