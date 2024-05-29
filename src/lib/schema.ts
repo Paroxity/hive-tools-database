@@ -6,17 +6,7 @@ import {
   text,
   timestamp,
 } from "drizzle-orm/pg-core";
-import {
-  CosmeticImage,
-  CosmeticLocalizedString,
-  CosmeticRating,
-} from "./types";
 import { sql } from "drizzle-orm";
-import { z } from "zod";
-
-/**
- * Players Schema
- */
 
 export const players = pgTable("players", {
   uuid: text("uuid").primaryKey().notNull(),
@@ -27,21 +17,6 @@ export const players = pgTable("players", {
   created_at: timestamp("created_at").defaultNow(),
   updated_at: timestamp("updated_at").defaultNow(),
 });
-
-export const PlayerSchema = z.object({
-  uuid: z.string(),
-  username: z.string(),
-  rank: z.string(),
-  equipped_avatar_id: z.string(),
-  equipped_avatar_name: z.string(),
-  created_at: z.date().optional(),
-  updated_at: z.date().optional(),
-});
-export type PlayerSchema = z.infer<typeof PlayerSchema>;
-
-/**
- * Cosmetics Schema
- */
 
 export const cosmetics = pgTable("cosmetics", {
   id: text("id").primaryKey().notNull(),
@@ -62,22 +37,3 @@ export const cosmetics = pgTable("cosmetics", {
   row_created: timestamp("row_created").defaultNow(),
   row_updated: timestamp("row_updated").defaultNow(),
 });
-
-export const CosmeticSchema = z.object({
-  id: z.string(),
-  title: CosmeticLocalizedString,
-  description: CosmeticLocalizedString,
-  creation_date: z.date(),
-  last_modified: z.date(),
-  start_date: z.date().nullable(),
-  end_date: z.date().nullable(),
-  thumbnail: z.string(),
-  images: z.array(CosmeticImage),
-  avg_rating: z.number(),
-  ratings: CosmeticRating,
-  price: z.number(),
-  manual_tags: z.array(z.string()),
-  row_created: z.date().optional(),
-  row_updated: z.date().optional(),
-});
-export type CosmeticSchema = z.infer<typeof CosmeticSchema>;
