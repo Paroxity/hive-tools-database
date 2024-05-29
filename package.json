@@ -32,9 +32,9 @@
       "types": "./dist/lib/database.d.ts",
       "default": "./dist/lib/database.js"
     },
-    "./tables": {
-      "types": "./dist/lib/tables.d.ts",
-      "default": "./dist/lib/tables.js"
+    "./schema": {
+      "types": "./dist/lib/schema.d.ts",
+      "default": "./dist/lib/schema.js"
     },
     "./types": {
       "types": "./dist/lib/types.d.ts",
