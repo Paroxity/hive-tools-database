@@ -4,10 +4,12 @@ export const players = pgTable("players", {
     uuid: text("uuid").primaryKey().notNull(),
     username: text("username").notNull(),
     rank: text("rank").notNull(),
-    equipped_avatar_id: text("equipped_avatar_id").default("default"),
-    equipped_avatar_name: text("equipped_avatar_name").default("Default"),
-    created_at: timestamp("created_at").defaultNow(),
-    updated_at: timestamp("updated_at").defaultNow(),
+    equipped_avatar_id: text("equipped_avatar_id").default("default").notNull(),
+    equipped_avatar_name: text("equipped_avatar_name")
+        .default("Default")
+        .notNull(),
+    created_at: timestamp("created_at").defaultNow().notNull(),
+    updated_at: timestamp("updated_at").defaultNow().notNull(),
 });
 export const cosmetics = pgTable("cosmetics", {
     id: text("id").primaryKey().notNull(),
@@ -24,8 +26,9 @@ export const cosmetics = pgTable("cosmetics", {
     price: integer("price").notNull(),
     manual_tags: text("manual_tags")
         .array()
-        .default(sql `ARRAY[]::text[]`),
-    row_created: timestamp("row_created").defaultNow(),
-    row_updated: timestamp("row_updated").defaultNow(),
+        .default(sql `ARRAY[]::text[]`)
+        .notNull(),
+    row_created: timestamp("row_created").defaultNow().notNull(),
+    row_updated: timestamp("row_updated").defaultNow().notNull(),
 });
 //# sourceMappingURL=schema.js.map

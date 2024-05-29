@@ -162,7 +162,7 @@ export default function initializeDatabase({ connectionUri, }: {
                     columnType: "PgArray";
                     data: string[];
                     driverParam: string | string[];
-                    notNull: false;
+                    notNull: true;
                     hasDefault: true;
                     enumValues: [string, ...string[]];
                     baseColumn: import("drizzle-orm").Column<{
@@ -185,7 +185,7 @@ export default function initializeDatabase({ connectionUri, }: {
                     columnType: "PgTimestamp";
                     data: Date;
                     driverParam: string;
-                    notNull: false;
+                    notNull: true;
                     hasDefault: true;
                     enumValues: undefined;
                     baseColumn: never;
@@ -197,7 +197,7 @@ export default function initializeDatabase({ connectionUri, }: {
                     columnType: "PgTimestamp";
                     data: Date;
                     driverParam: string;
-                    notNull: false;
+                    notNull: true;
                     hasDefault: true;
                     enumValues: undefined;
                     baseColumn: never;
@@ -252,7 +252,7 @@ export default function initializeDatabase({ connectionUri, }: {
                     columnType: "PgText";
                     data: string;
                     driverParam: string;
-                    notNull: false;
+                    notNull: true;
                     hasDefault: true;
                     enumValues: [string, ...string[]];
                     baseColumn: never;
@@ -264,7 +264,7 @@ export default function initializeDatabase({ connectionUri, }: {
                     columnType: "PgText";
                     data: string;
                     driverParam: string;
-                    notNull: false;
+                    notNull: true;
                     hasDefault: true;
                     enumValues: [string, ...string[]];
                     baseColumn: never;
@@ -276,7 +276,7 @@ export default function initializeDatabase({ connectionUri, }: {
                     columnType: "PgTimestamp";
                     data: Date;
                     driverParam: string;
-                    notNull: false;
+                    notNull: true;
                     hasDefault: true;
                     enumValues: undefined;
                     baseColumn: never;
@@ -288,7 +288,7 @@ export default function initializeDatabase({ connectionUri, }: {
                     columnType: "PgTimestamp";
                     data: Date;
                     driverParam: string;
-                    notNull: false;
+                    notNull: true;
                     hasDefault: true;
                     enumValues: undefined;
                     baseColumn: never;

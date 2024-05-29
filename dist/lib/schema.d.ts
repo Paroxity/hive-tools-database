@@ -45,7 +45,7 @@ export declare const players: import("drizzle-orm/pg-core").PgTableWithColumns<{
             columnType: "PgText";
             data: string;
             driverParam: string;
-            notNull: false;
+            notNull: true;
             hasDefault: true;
             enumValues: [string, ...string[]];
             baseColumn: never;
@@ -57,7 +57,7 @@ export declare const players: import("drizzle-orm/pg-core").PgTableWithColumns<{
             columnType: "PgText";
             data: string;
             driverParam: string;
-            notNull: false;
+            notNull: true;
             hasDefault: true;
             enumValues: [string, ...string[]];
             baseColumn: never;
@@ -69,7 +69,7 @@ export declare const players: import("drizzle-orm/pg-core").PgTableWithColumns<{
             columnType: "PgTimestamp";
             data: Date;
             driverParam: string;
-            notNull: false;
+            notNull: true;
             hasDefault: true;
             enumValues: undefined;
             baseColumn: never;
@@ -81,7 +81,7 @@ export declare const players: import("drizzle-orm/pg-core").PgTableWithColumns<{
             columnType: "PgTimestamp";
             data: Date;
             driverParam: string;
-            notNull: false;
+            notNull: true;
             hasDefault: true;
             enumValues: undefined;
             baseColumn: never;
@@ -244,7 +244,7 @@ export declare const cosmetics: import("drizzle-orm/pg-core").PgTableWithColumns
             columnType: "PgArray";
             data: string[];
             driverParam: string | string[];
-            notNull: false;
+            notNull: true;
             hasDefault: true;
             enumValues: [string, ...string[]];
             baseColumn: import("drizzle-orm").Column<{
@@ -267,7 +267,7 @@ export declare const cosmetics: import("drizzle-orm/pg-core").PgTableWithColumns
             columnType: "PgTimestamp";
             data: Date;
             driverParam: string;
-            notNull: false;
+            notNull: true;
             hasDefault: true;
             enumValues: undefined;
             baseColumn: never;
@@ -279,7 +279,7 @@ export declare const cosmetics: import("drizzle-orm/pg-core").PgTableWithColumns
             columnType: "PgTimestamp";
             data: Date;
             driverParam: string;
-            notNull: false;
+            notNull: true;
             hasDefault: true;
             enumValues: undefined;
             baseColumn: never;
