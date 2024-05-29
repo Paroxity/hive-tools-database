@@ -6,8 +6,8 @@ export const PlayerSchema = z.object({
     uuid: z.string(),
     username: z.string(),
     rank: z.string(),
-    equipped_avatar_id: z.string(),
-    equipped_avatar_name: z.string(),
+    equipped_avatar_id: z.string().optional(),
+    equipped_avatar_name: z.string().optional(),
     created_at: z.date().optional(),
     updated_at: z.date().optional(),
 });

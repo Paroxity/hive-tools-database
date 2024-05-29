@@ -6,24 +6,24 @@ export declare const PlayerSchema: z.ZodObject<{
     uuid: z.ZodString;
     username: z.ZodString;
     rank: z.ZodString;
-    equipped_avatar_id: z.ZodString;
-    equipped_avatar_name: z.ZodString;
+    equipped_avatar_id: z.ZodOptional<z.ZodString>;
+    equipped_avatar_name: z.ZodOptional<z.ZodString>;
     created_at: z.ZodOptional<z.ZodDate>;
     updated_at: z.ZodOptional<z.ZodDate>;
 }, "strip", z.ZodTypeAny, {
     uuid: string;
     username: string;
     rank: string;
-    equipped_avatar_id: string;
-    equipped_avatar_name: string;
+    equipped_avatar_id?: string | undefined;
+    equipped_avatar_name?: string | undefined;
     created_at?: Date | undefined;
     updated_at?: Date | undefined;
 }, {
     uuid: string;
     username: string;
     rank: string;
-    equipped_avatar_id: string;
-    equipped_avatar_name: string;
+    equipped_avatar_id?: string | undefined;
+    equipped_avatar_name?: string | undefined;
     created_at?: Date | undefined;
     updated_at?: Date | undefined;
 }>;
