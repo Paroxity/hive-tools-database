@@ -210,7 +210,7 @@ export default function initializeDatabase({ connectionUri, }: {
             schema: undefined;
             columns: {
                 id: import("drizzle-orm/pg-core").PgColumn<{
-                    name: "uuid";
+                    name: "id";
                     tableName: "players";
                     dataType: "string";
                     columnType: "PgText";

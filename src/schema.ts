@@ -20,7 +20,7 @@ import { z } from "zod";
  */
 
 export const players = pgTable("players", {
-  id: text("uuid").primaryKey().notNull(),
+  id: text("id").primaryKey().notNull(),
   username: text("username").notNull(),
   rank: text("rank").notNull(),
   equipped_avatar: json("equipped_avatar"),

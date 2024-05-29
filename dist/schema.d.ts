@@ -7,7 +7,7 @@ export declare const players: import("drizzle-orm/pg-core").PgTableWithColumns<{
     schema: undefined;
     columns: {
         id: import("drizzle-orm/pg-core").PgColumn<{
-            name: "uuid";
+            name: "id";
             tableName: "players";
             dataType: "string";
             columnType: "PgText";
