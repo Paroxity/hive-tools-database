@@ -17,4 +17,4 @@ export default function initializeDatabase({
 }
 
 export * from "./types";
-export { CosmeticSchema, PlayerSchema } from "./schema";
+export * from "./schema";
